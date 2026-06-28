@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml:2:13-83
+INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml:2:13-83
+	package
+		INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml
+	xmlns:android
+		ADDED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml:2:23-81
+uses-sdk
+INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml reason: use-sdk injection requested
+INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml
+INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml
+	android:targetSdkVersion
+		INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml
+	android:minSdkVersion
+		INJECTED from /private/tmp/veloris-android-sdk/veloris-sdk/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest7442889004851773704.xml

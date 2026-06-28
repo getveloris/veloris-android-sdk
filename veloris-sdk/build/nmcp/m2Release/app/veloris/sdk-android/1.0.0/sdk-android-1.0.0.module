@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "app.veloris",
+    "module": "sdk-android",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sdk-android-1.0.0.aar",
+          "url": "sdk-android-1.0.0.aar",
+          "size": 91426,
+          "sha512": "7ef71ded579b2d123919f1c0105fed9e89ddf7b99359659444eaa3bfb98522f8b84a2969c60be5f8048e01447c5a860ca1531d4fa04277d00520188fcbd86f05",
+          "sha256": "bcae6798944597191a41caeae3cff0c97037c6c146bbc1662ccb47627ec3650e",
+          "sha1": "8740bd8b2ae79612941fc9e51a0e66108774418f",
+          "md5": "52d9636c612147b3462c7ac68855f73b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sdk-android-1.0.0.aar",
+          "url": "sdk-android-1.0.0.aar",
+          "size": 91426,
+          "sha512": "7ef71ded579b2d123919f1c0105fed9e89ddf7b99359659444eaa3bfb98522f8b84a2969c60be5f8048e01447c5a860ca1531d4fa04277d00520188fcbd86f05",
+          "sha256": "bcae6798944597191a41caeae3cff0c97037c6c146bbc1662ccb47627ec3650e",
+          "sha1": "8740bd8b2ae79612941fc9e51a0e66108774418f",
+          "md5": "52d9636c612147b3462c7ac68855f73b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "sdk-android-1.0.0-sources.jar",
+          "url": "sdk-android-1.0.0-sources.jar",
+          "size": 9077,
+          "sha512": "99aee5808859d325846582bb3000f075dce0bc6df04325e13acf8c2f5df3659e6953dd1c5639524bb599ce41045f1b09745b7a56e546f9c6fa11513b3ceef6e7",
+          "sha256": "e3441c779d23e9ca0f4b881e766e8de412bdea74e7a2588f1074e6c94ca158cb",
+          "sha1": "a4e1eec1ecf8f93236bce06111d765266d2f32e4",
+          "md5": "954aff6b82574e7e1f5783d82d2635ca"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "sdk-android-1.0.0-javadoc.jar",
+          "url": "sdk-android-1.0.0-javadoc.jar",
+          "size": 374632,
+          "sha512": "9b61dad425de2e65f74f621d243ad489633df1c48672caeb0572d6d159597f29a9a6c22382371fbe76f8b2736365fd0353582718405834f93867f2eb58bc5f4c",
+          "sha256": "7d5262888851cb18a392045041be9d982ba9a834acc48ab0d6cc87e9ab2786f6",
+          "sha1": "d2872f5233f65012a103c7540933165afe0d4751",
+          "md5": "83ab8fb9efd7dcd6cc1ad2f303b274ee"
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
-// veloris-sdk/build.gradle.kts
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id("com.android.library") version "8.2.0"
+    id("org.jetbrains.kotlin.android") version "1.9.22"
     id("maven-publish")
     id("signing")
+    id("com.gradleup.nmcp") version "0.0.8"
 }
 
 android {
@@ -12,17 +12,11 @@ android {
 
     defaultConfig {
         minSdk = 24
-        targetSdk = 34
-        aarMetadata {
-            minCompileSdk = 24
-        }
+        aarMetadata { minCompileSdk = 24 }
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
+        release { isMinifyEnabled = false }
     }
 
     compileOptions {
@@ -30,9 +24,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+    kotlinOptions { jvmTarget = "17" }
 
     publishing {
         singleVariant("release") {
@@ -44,67 +36,56 @@ android {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId    = "app.veloris"
+            artifactId = "sdk-android"
+            version    = "1.0.0"
+
+            afterEvaluate {
                 from(components["release"])
+            }
 
-                groupId    = "app.veloris"
-                artifactId = "sdk-android"
-                version    = "1.0.0"
-
-                pom {
-                    name.set("Veloris Sentinel Android SDK")
-                    description.set("Behavioural authentication SDK for Android banking apps")
-                    url.set("https://github.com/getveloris/veloris-android-sdk")
-
-                    licenses {
-                        license {
-                            name.set("MIT License")
-                            url.set("https://opensource.org/licenses/MIT")
-                        }
-                    }
-
-                    developers {
-                        developer {
-                            id.set("veloris")
-                            name.set("Veloris")
-                            email.set("support@veloris.app")
-                        }
-                    }
-
-                    scm {
-                        connection.set("scm:git:git://github.com/getveloris/veloris-android-sdk.git")
-                        developerConnection.set("scm:git:ssh://github.com/getveloris/veloris-android-sdk.git")
-                        url.set("https://github.com/getveloris/veloris-android-sdk")
+            pom {
+                name.set("Veloris Sentinel Android SDK")
+                description.set("Behavioural authentication SDK for Android banking apps")
+                url.set("https://github.com/getveloris/veloris-android-sdk")
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/MIT")
                     }
                 }
-            }
-        }
-
-        repositories {
-            maven {
-                name = "MavenCentral"
-                val releasesUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-                val snapshotsUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-                url = if (version.toString().endsWith("SNAPSHOT")) snapshotsUrl else releasesUrl
-                credentials {
-                    username = findProperty("sonatypeUsername") as String? ?: ""
-                    password = findProperty("sonatypePassword") as String? ?: ""
+                developers {
+                    developer {
+                        id.set("veloris")
+                        name.set("Veloris")
+                        email.set("support@veloris.app")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/getveloris/veloris-android-sdk.git")
+                    developerConnection.set("scm:git:ssh://github.com/getveloris/veloris-android-sdk.git")
+                    url.set("https://github.com/getveloris/veloris-android-sdk")
                 }
             }
         }
     }
+}
 
-    signing {
-        sign(publishing.publications["release"])
+signing {
+    sign(publishing.publications["release"])
+}
+
+nmcp {
+    publish("release") {
+        username = findProperty("sonatypeUsername") as String? ?: ""
+        password = findProperty("sonatypePassword") as String? ?: ""
+        publicationType = "AUTOMATIC"
     }
 }
